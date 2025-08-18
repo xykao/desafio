@@ -1,8 +1,5 @@
 from datetime import datetime
 
-# ==============================
-# Classes de Transações
-# ==============================
 class Transacao:
     def __init__(self, valor):
         self.valor = valor
@@ -30,9 +27,7 @@ class Saque(Transacao):
         else:
             print("\n❌ Operação falhou! Valor inválido.")
 
-# ==============================
-# Histórico de transações
-# ==============================
+
 class Historico:
     def __init__(self):
         self.transacoes = []
@@ -40,9 +35,7 @@ class Historico:
     def adicionar(self, transacao):
         self.transacoes.append(transacao)
 
-# ==============================
-# Classe Conta
-# ==============================
+
 class Conta:
     def __init__(self, numero, cliente, agencia="0001"):
         self.numero = numero
@@ -81,9 +74,7 @@ class Conta:
         print(f"Saldo: R$ {self.saldo:.2f}")
         print("==========================================")
 
-# ==============================
-# Classe Cliente
-# ==============================
+
 class Cliente:
     def __init__(self, nome, cpf, data_nascimento, endereco):
         self.nome = nome
@@ -95,9 +86,7 @@ class Cliente:
     def adicionar_conta(self, conta):
         self.contas.append(conta)
 
-# ==============================
-# Funções auxiliares
-# ==============================
+
 def filtrar_cliente(cpf, clientes):
     for cliente in clientes:
         if cliente.cpf == cpf:
@@ -145,9 +134,6 @@ def listar_contas(clientes):
         for conta in cliente.contas:
             print(f"  Agência: {conta.agencia} | Conta: {conta.numero} | Saldo: R$ {conta.saldo:.2f}")
 
-# ==============================
-# Função principal (Menu)
-# ==============================
 def main():
     clientes = []
     contas = []
@@ -210,3 +196,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
